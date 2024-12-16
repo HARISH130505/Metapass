@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
-import MetaPassLogo from './MetaPassLogo.png'; 
 import SignatureIcon from './SignatureIcon.png'; 
 
 function File() {
@@ -37,11 +36,8 @@ function File() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900">
-      <div className="flex items-center mb-8">
-        <img src={MetaPassLogo} alt="MetaPass Logo" className="w-20 h-20 mr-4" />
-      </div>
-
-      <div className="w-full max-w-md bg-gray-800 rounded-lg p-8">
+      <div className="w-full max-w-md p-8">
+        <div className=' bg-gray-700 rounded-xl p-6 m-4'>
         <div className="flex items-center mb-6">
           <FontAwesomeIcon icon={faUser} className="text-white text-4xl mr-4" />
           <label htmlFor="passport-input" className="block text-sm font-medium text-white">
@@ -55,8 +51,9 @@ function File() {
           onChange={handlePassportImageChange}
           accept="image/*"
         />
-
-        <div className="flex items-center mt-6">
+        </div>
+       <div  className=' bg-gray-700 rounded-xl p-6 m-4'>
+        <div className="flex items-center mb-6">
           <img src={SignatureIcon} alt="Signature Icon" className="w-16 h-8 mr-4" />
           <label htmlFor="signature-input" className="block text-sm font-medium text-white">
             UPLOAD AN IMAGE OF YOUR PASSPORT SIGNATURE
@@ -69,11 +66,12 @@ function File() {
           onChange={handleSignatureImageChange}
           accept="image/*"
         />
+        </div>
       </div>
 
       <button
         type="submit"
-        className="w-full px-4 py-2 mt-8 text-white bg-purple-500 rounded-md hover:bg-purple-600 focus:outline-none"
+        className="w-1/3  px-6 py-2 mt-10 text-white bg-purple-500 rounded-md hover:bg-purple-600 focus:outline-none"
         onClick={handleSubmit}
         disabled={!passportImage || !signatureImage}
       >

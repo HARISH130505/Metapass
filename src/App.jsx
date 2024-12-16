@@ -1,11 +1,12 @@
 
 import React from 'react';
-import File from './file'; 
+import Preview from './preview';
 
 function App() {
   return (
     <div>
-      <File />
+      
+      <Preview />
     </div>
   );
 }
