@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { FontAwesomeIcon } from '@fontawesome/react-fontawesome';
-import { faUser } from '@fontawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 import MetaPassLogo from './MetaPassLogo.png'; 
 import SignatureIcon from './SignatureIcon.png'; 
 
