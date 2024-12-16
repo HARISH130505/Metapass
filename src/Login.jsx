@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import MetaPass from './assets/metapass.png'
+import { Link } from 'react-router-dom';
 
-function Home(){
+function Login(){
   const [account, setAccount] = useState(null);
   const [error, setError] = useState(null);
 
@@ -35,19 +36,21 @@ function Home(){
       <div className='flex w-screen h-screen justify-center items-center flex-col'>
         <div className='bg-slate-600 rounded-xl bg-opacity-45 p-6 flex flex-col justify-center items-center'>
             <img src={MetaPass} className='w-96'></img>
-            <h1 className='text-white text-3xl py-8 font-robo'>LOGIN</h1>
+            <h1 className='text-white text-3xl py-8 '>LOGIN</h1>
             {error && <p className='text-red-800'>{error}</p>}
             {account ? (
             <div>
-                <p className='text-white font-robo md:text-xl xs:text-center'>Connected Account: <br className='md:hidden'></br>{account}</p>
+                <p className='text-white  md:text-xl xs:text-center'>Connected Account: <br className='md:hidden'></br>{account}</p>
             </div>
             ) : (
-            <button onClick={connectMetaMask} className='bg-slate-500 text-white w-52 border-solid rounded-lg p-4 font-robo text-xl'>CONNECT METAMASK</button>
+            <button onClick={connectMetaMask} className='bg-slate-600 text-white w-72 border-solid rounded-lg p-4  text-xl'>CONNECT METAMASK</button>
             )}
-            <button className='bg-slate-500 w-52 border-solid rounded-md p-4 my-8 font-robo text-xl'>CONTINUE</button>
+            <Link to="/file">
+                <button className='w-72 px-6 py-3 mt-5 text-white text-xl bg-slate-600 rounded-xl'>CONTINUE</button>
+            </Link>
       </div>
       </div>
   );
 };
 
-export default Home;
+export default Login;

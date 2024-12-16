@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
+import PersonIcon from '@mui/icons-material/Person';
 import SignatureIcon from './SignatureIcon.png'; 
+import Nav from './Nav';
+import { Link } from 'react-router-dom';
 
 function File() {
   const [passportImage, setPassportImage] = useState(null);
@@ -35,11 +36,13 @@ function File() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900">
-      <div className="w-full max-w-md p-8">
+    <div>
+      <Nav/>
+    <div className="flex flex-col justify center items-center mt-10">
+      <div className="w-full flex flex-col  justify-center items-center max-w-md p-8 bg-slate-600 rounded-xl bg-opacity-45">
         <div className=' bg-gray-700 rounded-xl p-6 m-4'>
         <div className="flex items-center mb-6">
-          <FontAwesomeIcon icon={faUser} className="text-white text-4xl mr-4" />
+          <PersonIcon className="text-white  mr-4"/>
           <label htmlFor="passport-input" className="block text-sm font-medium text-white">
             UPLOAD FRONT-PAGE OF YOUR EXISTING PASSPORT
           </label>
@@ -67,16 +70,17 @@ function File() {
           accept="image/*"
         />
         </div>
-      </div>
-
-      <button
-        type="submit"
-        className="w-1/3  px-6 py-2 mt-10 text-white bg-purple-500 rounded-md hover:bg-purple-600 focus:outline-none"
+        <Link to="/user">
+        <button
+        className="w-52 px-6 py-3 mt-5 text-white bg-slate-600 rounded-xl"
         onClick={handleSubmit}
         disabled={!passportImage || !signatureImage}
-      >
+        >
         CONTINUE
       </button>
+      </Link>
+      </div>
+    </div>
     </div>
   );
 }
