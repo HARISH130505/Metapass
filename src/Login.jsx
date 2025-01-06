@@ -39,15 +39,21 @@ function Login(){
             <h1 className='text-white text-3xl py-8 '>LOGIN</h1>
             {error && <p className='text-red-800'>{error}</p>}
             {account ? (
-            <div>
+            <div className='flex flex-col justify-center items-center'>
                 <p className='text-white  md:text-xl xs:text-center'>Connected Account: <br className='md:hidden'></br>{account}</p>
+                <Link to="/file">
+                <button className='w-72 px-6 py-3 mt-5 text-white text-xl bg-slate-600 rounded-xl'>CONTINUE</button>
+                </Link>
             </div>
             ) : (
-            <button onClick={connectMetaMask} className='bg-slate-600 text-white w-72 border-solid rounded-lg p-4  text-xl'>CONNECT METAMASK</button>
+            <div className='flex flex-col justify-center items-center'>
+              <button onClick={connectMetaMask} className='bg-slate-600 text-white w-72 border-solid rounded-lg p-4  text-xl'>CONNECT METAMASK</button>
+              <Link to="/login">
+                  <button className='w-72 px-6 py-3 mt-5 text-white text-xl bg-slate-600 rounded-xl'>CONTINUE</button>
+              </Link>
+            </div>
             )}
-            <Link to="/file">
-                <button className='w-72 px-6 py-3 mt-5 text-white text-xl bg-slate-600 rounded-xl'>CONTINUE</button>
-            </Link>
+            
       </div>
       </div>
   );

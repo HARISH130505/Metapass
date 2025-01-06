@@ -6,6 +6,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Landing from "./landing";
 import Preview from "./preview";
 import About from "./About";
+import Services from "./Services";
+import CollectedPermits from "./CollectedPermits";
+import GetPermits from "./GetPermits";
+import Admin from "./Admin";
 
 function App(){
     return(
@@ -19,6 +23,10 @@ function App(){
                   <Route path="user" element={<User/>}/>
                   <Route path="preview" element={<Preview/>}/>
                   <Route path="save" element={<Save/>}/>
+                  <Route path="services" element={<Services/>}/>
+                  <Route path="permits" element={<GetPermits/>}/>
+                  <Route path="collections" element={<CollectedPermits/>}/>
+                  <Route path="admin" element={<Admin/>}/>
                </Routes>
             </BrowserRouter>
         </div>
