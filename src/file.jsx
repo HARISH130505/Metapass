@@ -23,17 +23,6 @@ function File() {
     setSignatureImage(file);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-
-    if (passportImage && signatureImage) {
-      console.log('Passport Image:', passportImage.name);
-      console.log('Signature Image:', signatureImage.name);
-      setPassportImage(null);
-      setSignatureImage(null);
-    }
-  };
 
   return (
     <div>
@@ -71,14 +60,8 @@ function File() {
         />
         </div>
         <Link to="/user">
-        <button
-        className="w-52 px-6 py-3 mt-5 text-white bg-slate-600 rounded-xl"
-        onClick={handleSubmit}
-        disabled={!passportImage || !signatureImage}
-        >
-        CONTINUE
-      </button>
-      </Link>
+        <button className="w-52 px-6 py-3 mt-5 text-white bg-slate-600 rounded-xl">CONTINUE</button>
+        </Link>
       </div>
     </div>
     </div>

@@ -10,6 +10,7 @@ import Services from "./Services";
 import CollectedPermits from "./CollectedPermits";
 import GetPermits from "./GetPermits";
 import Admin from "./Admin";
+import Display from "./Display";
 
 function App(){
     return(
@@ -21,6 +22,7 @@ function App(){
                   <Route path="login" element={<Login/>}/>
                   <Route path="file" element={<File/>}/>
                   <Route path="user" element={<User/>}/>
+                  <Route path="display" element={<Display/>}/>
                   <Route path="preview" element={<Preview/>}/>
                   <Route path="save" element={<Save/>}/>
                   <Route path="services" element={<Services/>}/>

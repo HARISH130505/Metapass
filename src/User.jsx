@@ -23,6 +23,42 @@ function User(){
     function handlePob(e){
         setPob(e.target.value)
     }
+    
+    async function handleSubmit(e) {
+
+        e.preventDefault();
+
+        if (!fn || !ln || !passno || !dob || !pob) {
+            alert("Please fill in all fields.");
+            return;
+        }
+
+        const formData = { fn, ln, passno, dob, pob };
+
+        try {
+            const response = await fetch("https://pass-backend-pink.vercel.app/users", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                alert("Data submitted successfully!");
+                setFn("");
+                setLn("");
+                setPassno("");
+                setDob("");
+                setPob("");
+            } else {
+                alert("Failed to submit data.");
+            }
+        } catch (error) {
+            console.error("Error submitting form:", error);
+            alert("An error occurred. Please try again.");
+        }
+    }
     return(
         <div>
             <Nav/>
@@ -59,9 +95,14 @@ function User(){
                         </li>
                     </ul>
             </div>
-            <Link to="/preview">
-                <button className='w-52 px-6 py-3 mt-5 text-white bg-slate-600 rounded-xl'>Save Details</button>
-            </Link>
+                <div className='flex justify-between'>
+                    <button className='w-40 px-6 py-3 m-5 text-white bg-slate-600 rounded-xl' onClick={handleSubmit} type='submit'>Save Details</button>
+                    <Link to="/display">
+                    <button className='w-40 px-6 py-3 m-5 text-white bg-slate-600 rounded-xl'>Show Details</button>
+                    </Link>
+                </div>
+                
+                
             </div>
             </div>
         </div>
